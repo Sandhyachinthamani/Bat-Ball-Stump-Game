@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="sports_cricket_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png">
+    <title>BatBallStump Game</title>
+    <link rel="Stylesheet" href="style.css"/>
+</head>
+<body>
+    <h1>Bat Ball Stump Game</h1>
+    <div id="container">
+    <button id="bat" onclick="document.querySelector('h3').innerText='Play Again!!!';
+                        let randomnumber=Math.random()*3;
+                        let computerChoice;
+                        let result;
+                        if(randomnumber>0 && randomnumber<=1){
+                            computerChoice='Bat';
+                            result=`It's a tie!`;
+                        }
+                        else if(randomnumber>1 && randomnumber<=2){
+                            computerChoice='Ball';
+                            result=`Congratulations 🥳, You have won the match!`;
+                        }
+                        else{
+                            computerChoice='Stump'
+                            result=`Computer has won!`
+                        }
+                        alert(`You have picked Bat.\nComputer has picked ${computerChoice}.\n${result}`);
+    "><img src="bat.png"/></button>
+
+    <button id="ball" onclick="document.querySelector('h3').innerText='Play Again!!!';
+                        randomnumber=Math.random()*3;
+                        if(randomnumber>0 && randomnumber<=1){
+                            computerChoice='Bat';
+                            result=`Computer has won!`;
+                        }
+                        else if(randomnumber>1 && randomnumber<=2){
+                            computerChoice='Ball';
+                            result=`It's a tie!`;
+                        }
+                        else{
+                            computerChoice='Stump'
+                            result=`Congratulations 🥳, You have won the match!`
+                        }
+                        alert(`You have picked Ball.\nComputer has picked ${computerChoice}.\n${result}`);
+    "><img src="ball.png"/></button>
+
+    <button id="stump" onclick="document.querySelector('h3').innerText='Play Again!!!';
+                        randomnumber=Math.random()*3;
+                        if(randomnumber>0 && randomnumber<=1){
+                            computerChoice='Bat';
+                            result=`Congratulations 🥳, You have won the match!`;
+                        }
+                        else if(randomnumber>1 && randomnumber<=2){
+                            computerChoice='Ball';
+                            result=`Computer has won!`;
+                        }
+                        else{
+                            computerChoice='Stump'
+                            result=`It's a tie!`
+                        }
+                        alert(`You have picked Stump.\nComputer has picked ${computerChoice}.\n${result}`);
+    "><img src="wicket.png"/></button>
+    </div>
+    <h3>Select your pick!</h3>
+</body>
+</html>
