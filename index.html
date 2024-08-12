@@ -31,7 +31,6 @@
 
     <button id="restart" onclick="localStorage.clear();
                         resetScore();
-                        showResult();
     ">Restart</button>
     </div>
 
@@ -48,6 +47,7 @@
         score.displayScore=function(){
                 return `Score: Win-${score.won} Lost-${score.lost} Tie-${score.tie}`;
         }  
+        showResult();
         }
         
         function generateComputerChoice() {
@@ -65,43 +65,43 @@
         function getResult(userpick, computerpick) {
             if(userpick==computerpick){
                 score.tie++;
-                return `It's a tie!`;
+                return `It's a tie!🙃`;
             }
             else if(userpick=='Bat'){
                 if(computerpick=='Ball'){
                     score.won++;
-                    return `You won 🥳!`;
+                    return `You won!🥳`;
                 }
                 else if(computerpick=='Stump'){
                     score.lost++;
-                    return `Computer has won!`;
+                    return `Computer has won!😐`;
                 }
             }
             else if(userpick=='Ball'){
                 if(computerpick=='Bat'){
                     score.lost++;
-                    return `Computer has won!`;
+                    return `Computer has won!😐`;
                 }
                 else if(computerpick=='Stump'){
                     score.won++;
-                    return `You won 🥳!`;
+                    return `You won!🥳`;
                 }
             }
             else if(userpick=='Stump'){
                 if(computerpick=='Bat'){
                     score.won++;
-                    return `You won 🥳!`;
+                    return `You won!🥳`;
                 }
                 else if(computerpick=='Ball'){
                     score.lost++;
-                    return `Computer has won!`;
+                    return `Computer has won!😐`;
                 }
             }
         }
         function showResult(userpick, computerpick, result) {
             localStorage.setItem('score', JSON.stringify(score));
-            document.querySelector('#usermove').innerText=userpick? `You have picked ${userpick}.`: '';
-            document.querySelector('#computermove').innerText=computerpick? `Computer has picked ${computerpick}.`: '';
+            document.querySelector('#usermove').innerText=userpick? `You chose ${userpick}.`: '';
+            document.querySelector('#computermove').innerText=computerpick? `Computer chose ${computerpick}.`: '';
             document.querySelector('#result').innerText=result || '';
             document.querySelector('#score').innerText=score.displayScore();
             // alert(`You have picked ${userpick}.\nComputer has picked ${computerpick}.\n${result}\n ${score.displayScore()}`);
